@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 	id "com.palantir.docker" version "0.33.0"
 	id "com.palantir.docker-run" version "0.33.0"
-	//información de los plugin docker https://github.com/palantir/gradle-docker
+	//informaciï¿½n de los plugin docker https://github.com/palantir/gradle-docker
 }
 
 group = 'us.mitfs.samples'
@@ -51,7 +51,7 @@ dockerRun {
     image 'audit-server:0.0.1-SNAPSHOT'
     ports '8080:8080'
     daemonize true
-    env 'GITHUB_LOGIN': project.findProperty("gpr.user") ?: System.getenv("GITHUB_LOGIN"), 'GITHUB_OAUTH': project.findProperty("gpr.key") ?: System.getenv("GITHUB_OAUTH")
+    env 'GITHUB_LOGIN': project.findProperty("gpr.user") ?: System.getenv("GITHUB_LOGIN"), 'GITHUB_OAUTH': project.findProperty("gpr.oauth") ?: System.getenv("GITHUB_OAUTH")
 }
 tasks.register('localenv-up') {
 	doLast {

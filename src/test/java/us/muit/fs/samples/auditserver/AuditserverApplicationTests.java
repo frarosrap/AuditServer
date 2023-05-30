@@ -63,7 +63,7 @@ class SuccessfulHealthzTest {
 		String endpoint = "http://localhost:" + port + "/readyz";
 		Map<String, Object> endpointResponse = this.restTemplate.getForObject(endpoint, Map.class);
 		log.info("Esta es la respuesta "+endpointResponse);
-		assertThat(endpointResponse).containsKeys("healthy", "totalAdditions", "metric");
+		assertThat(endpointResponse).containsKeys("healthy", "totalAdditions", "metric","remoteRepo");
 		assertThat(endpointResponse.get("healthy")).isEqualTo(true);
 	}
 }
